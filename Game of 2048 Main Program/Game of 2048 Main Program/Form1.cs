@@ -10,15 +10,23 @@ using System.Windows.Forms;
 
 namespace Game_of_2048_Main_Program
 {
-    delegate void ControlHandler(int[,] theGameBoard);
     public partial class Form1 : Form
     {
-
-        ControlHandler actionAfterKeyDown;
-
+        public static Button[,] buttons = new Button[4, 4];
+        public static Color[] ColorsAccorValue = new Color[5];
         public static int[,] gameBoard = new int[4, 4];
         public Form1()
         {
+            for (int i = 0,greenPart=160, bluePart = 110; i < 5; i++,greenPart+=10,bluePart+=10)
+            {
+                ColorsAccorValue[i] = Color.FromArgb(255, greenPart, bluePart);
+            }
+            buttons = new Button[,]{
+                { button2,button3,button4,button5},
+                { button6,button7,button8,button9},
+                { button10,button11,button12,button13},
+                { button14,button15,button16,button17}
+            };
             InitializeComponent();
 
             for (int i = 0; i < 4; i++)
@@ -26,6 +34,7 @@ namespace Game_of_2048_Main_Program
                 Random rd = new Random();
                 gameBoard[rd.Next(0, 4), rd.Next(0, 4)] = i % 2 == 0 ? 2 : 4;
             }
+            PutResultsOnBoard();
         }
 
 
@@ -181,33 +190,50 @@ namespace Game_of_2048_Main_Program
         private void ControlKeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Right) {
-                actionAfterKeyDown = Form1.Right;
-                actionAfterKeyDown(Form1.gameBoard);
+                Form1.Right(Form1.gameBoard);
             }
             else if (e.KeyCode == Keys.Left)
             {
-                actionAfterKeyDown = Form1.Left;
-                actionAfterKeyDown(Form1.gameBoard);
+                Form1.Left(Form1.gameBoard);
             }
             else if (e.KeyCode == Keys.Up)
             {
-                actionAfterKeyDown = Form1.Up;
-                actionAfterKeyDown(Form1.gameBoard);
+                Form1.Up(Form1.gameBoard);
             }
             else if (e.KeyCode == Keys.Down)
             {
-                actionAfterKeyDown = Form1.Down;
-                actionAfterKeyDown(Form1.gameBoard);
+                Form1.Down(Form1.gameBoard);
             }
-
+            PutResultsOnBoard();
         }
 
 
 
-        //public void PutResultsOnBoard()
-        //{
-        //    this.tableLayoutPanel1.ColumnStyles[]
-        //}
+        public void PutResultsOnBoard()
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                {
+                    if (gameBoard[i,j].ToString()!="0")
+                    {
+                        buttons[i, j].Text = gameBoard[i, j].ToString();
+                        if (gameBoard[i, j]==2)
+                            buttons[i, j].BackColor = ColorsAccorValue[0];
+                        else if (gameBoard[i, j] == 4)
+                            buttons[i, j].BackColor = ColorsAccorValue[1];
+                        else if (gameBoard[i, j] == 8)
+                            buttons[i, j].BackColor = ColorsAccorValue[2];
+                        else if (gameBoard[i, j] == 16)
+                            buttons[i, j].BackColor = ColorsAccorValue[3];
+                        else if (gameBoard[i, j] == 32)
+                            buttons[i, j].BackColor = ColorsAccorValue[4];
+                        else if (gameBoard[i, j] == 64)
+                            buttons[i, j].BackColor = ColorsAccorValue[5];
+                    }
+                }
+            }
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
 
