@@ -215,21 +215,21 @@ namespace Game_of_2048_Main_Program
             {
                 for (int j = 0; j < 4; j++)
                 {
-                    if (gameBoard[i,j].ToString()!="0")
+                    if (Form1.gameBoard[i,j].ToString()!="0")
                     {
-                        buttons[i, j].Text = gameBoard[i, j].ToString();
-                        if (gameBoard[i, j]==2)
-                            buttons[i, j].BackColor = ColorsAccorValue[0];
-                        else if (gameBoard[i, j] == 4)
-                            buttons[i, j].BackColor = ColorsAccorValue[1];
-                        else if (gameBoard[i, j] == 8)
-                            buttons[i, j].BackColor = ColorsAccorValue[2];
-                        else if (gameBoard[i, j] == 16)
-                            buttons[i, j].BackColor = ColorsAccorValue[3];
-                        else if (gameBoard[i, j] == 32)
-                            buttons[i, j].BackColor = ColorsAccorValue[4];
-                        else if (gameBoard[i, j] == 64)
-                            buttons[i, j].BackColor = ColorsAccorValue[5];
+                        Form1.buttons[i, j].Text = Form1.gameBoard[i, j].ToString();
+                        if (Form1.gameBoard[i, j] == 2)
+                            Form1.buttons[i, j].BackColor = ColorsAccorValue[0];
+                        else if (Form1.gameBoard[i, j] == 4)
+                            Form1.buttons[i, j].BackColor = ColorsAccorValue[1];
+                        else if (Form1.gameBoard[i, j] == 8)
+                            Form1.buttons[i, j].BackColor = ColorsAccorValue[2];
+                        else if (Form1.gameBoard[i, j] == 16)
+                            Form1.buttons[i, j].BackColor = ColorsAccorValue[3];
+                        else if (Form1.gameBoard[i, j] == 32)
+                            Form1.buttons[i, j].BackColor = ColorsAccorValue[4];
+                        else if (Form1.gameBoard[i, j] == 64)
+                            Form1.buttons[i, j].BackColor = ColorsAccorValue[5];
                     }
                 }
             }
