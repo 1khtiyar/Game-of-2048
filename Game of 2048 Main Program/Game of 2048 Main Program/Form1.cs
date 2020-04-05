@@ -13,33 +13,45 @@ namespace Game_of_2048_Main_Program
     public partial class Form1 : Form
     {
         public static Button[,] buttons = new Button[4, 4];
-        public static Color[] ColorsAccorValue = new Color[5];
+
         public static int[,] gameBoard = new int[4, 4];
         public Form1()
         {
-            for (int i = 0,greenPart=160, bluePart = 110; i < 5; i++,greenPart+=10,bluePart+=10)
-            {
-                ColorsAccorValue[i] = Color.FromArgb(255, greenPart, bluePart);
-            }
+            InitializeComponent();
             buttons = new Button[,]{
                 { button2,button3,button4,button5},
                 { button6,button7,button8,button9},
                 { button10,button11,button12,button13},
                 { button14,button15,button16,button17}
             };
-            InitializeComponent();
 
             for (int i = 0; i < 4; i++)
             {
                 Random rd = new Random();
-                gameBoard[rd.Next(0, 4), rd.Next(0, 4)] = i % 2 == 0 ? 2 : 4;
+                Form1.gameBoard[rd.Next(0, 4), rd.Next(0, 4)] = i % 2 == 0 ? 2 : 4;
+            }
+            PutResultsOnBoard();
+        }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            buttons = new Button[,]{
+                { button2,button3,button4,button5},
+                { button6,button7,button8,button9},
+                { button10,button11,button12,button13},
+                { button14,button15,button16,button17}
+            };
+
+            for (int i = 0; i < 4; i++)
+            {
+                Random rd = new Random();
+                Form1.gameBoard[rd.Next(0, 4), rd.Next(0, 4)] = i % 2 == 0 ? 2 : 4;
             }
             PutResultsOnBoard();
         }
 
 
         //Control functionality:
-        public static void Down(int[,] gameBoard)
+        public static void Down(ref int[,] gameBoard)
         {
             for (int j = 0; j < 4; j++)
             {
@@ -75,7 +87,7 @@ namespace Game_of_2048_Main_Program
                 goto startRechecking;
             }
         }
-        public static void Up(int[,] gameBoard)
+        public static void Up(ref int[,] gameBoard)
         {
             for (int j = 0; j < 4; j++)
             {
@@ -111,7 +123,7 @@ namespace Game_of_2048_Main_Program
                 goto startRechecking;
             }
         }
-        public static void Right(int[,] gameBoard)
+        public static void Right(ref int[,] gameBoard)
         {
             for (int i = 0; i < 4; i++)
             {
@@ -147,7 +159,7 @@ namespace Game_of_2048_Main_Program
                 goto startRechecking;
             }
         }
-        public static void Left(int[,] gameBoard)
+        public static void Left(ref int[,] gameBoard)
         {
             for (int i = 0; i < 4; i++)
             {
@@ -182,31 +194,11 @@ namespace Game_of_2048_Main_Program
                 enough = true;
                 goto startRechecking;
             }
+
         }
 
 
         //Control handlers:
-
-        private void ControlKeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Right) {
-                Form1.Right(Form1.gameBoard);
-            }
-            else if (e.KeyCode == Keys.Left)
-            {
-                Form1.Left(Form1.gameBoard);
-            }
-            else if (e.KeyCode == Keys.Up)
-            {
-                Form1.Up(Form1.gameBoard);
-            }
-            else if (e.KeyCode == Keys.Down)
-            {
-                Form1.Down(Form1.gameBoard);
-            }
-            PutResultsOnBoard();
-        }
-
 
 
         public void PutResultsOnBoard()
@@ -215,39 +207,72 @@ namespace Game_of_2048_Main_Program
             {
                 for (int j = 0; j < 4; j++)
                 {
-                    if (Form1.gameBoard[i,j].ToString()!="0")
+                    if (gameBoard[i, j]==0)
                     {
-                        Form1.buttons[i, j].Text = Form1.gameBoard[i, j].ToString();
-                        if (Form1.gameBoard[i, j] == 2)
-                            Form1.buttons[i, j].BackColor = ColorsAccorValue[0];
-                        else if (Form1.gameBoard[i, j] == 4)
-                            Form1.buttons[i, j].BackColor = ColorsAccorValue[1];
-                        else if (Form1.gameBoard[i, j] == 8)
-                            Form1.buttons[i, j].BackColor = ColorsAccorValue[2];
-                        else if (Form1.gameBoard[i, j] == 16)
-                            Form1.buttons[i, j].BackColor = ColorsAccorValue[3];
-                        else if (Form1.gameBoard[i, j] == 32)
-                            Form1.buttons[i, j].BackColor = ColorsAccorValue[4];
-                        else if (Form1.gameBoard[i, j] == 64)
-                            Form1.buttons[i, j].BackColor = ColorsAccorValue[5];
+                        buttons[i, j].Text = null;
+                        continue;
+                    }
+                    buttons[i, j].Text = gameBoard[i, j].ToString();
+                }
+            }
+        }
+
+        //Put additional value on gameboard
+        public void AddVal(ref int[,] gameBoard)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                {
+                    if (gameBoard[i, j] == 0)
+                    {
+                        gameBoard[i, j] = (i + j) % 2 == 0 ? 2 : 4;
+                        return;
                     }
                 }
             }
         }
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void Button1_Click(object sender, EventArgs e)
         {
             this.Close();
-
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
 
+        private void RestartButton_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                {
+                    gameBoard[i, j] = 0;
+                }
+            }
+        }
+
+
+        private void DownClick(object sender, EventArgs e)
+        {
+            Down(ref gameBoard);
+            AddVal(ref gameBoard);
+            PutResultsOnBoard();
+        }
+        private void UpClick(object sender, EventArgs e)
+        {
+            Up(ref gameBoard);
+            AddVal(ref gameBoard);
+            PutResultsOnBoard();
+        }
+        private void RightClick(object sender, EventArgs e)
+        {
+            Right(ref gameBoard);
+            AddVal(ref gameBoard);
+            PutResultsOnBoard();
+        }
+        private void LeftClick(object sender, EventArgs e)
+        {
+            Left(ref gameBoard);
+            AddVal(ref gameBoard);
+            PutResultsOnBoard();
         }
     }
 }
