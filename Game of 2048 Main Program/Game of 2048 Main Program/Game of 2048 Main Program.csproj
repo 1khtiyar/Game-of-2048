@@ -98,5 +98,8 @@
   <ItemGroup>
     <None Include="Resources\Restart Icon1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BackColorItems.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

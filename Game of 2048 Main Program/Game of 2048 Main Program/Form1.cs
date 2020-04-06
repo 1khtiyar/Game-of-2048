@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -220,17 +221,12 @@ namespace Game_of_2048_Main_Program
         //Put additional value on gameboard
         public void AddVal(ref int[,] gameBoard)
         {
-            for (int i = 0; i < 4; i++)
-            {
-                for (int j = 0; j < 4; j++)
-                {
-                    if (gameBoard[i, j] == 0)
-                    {
-                        gameBoard[i, j] = (i + j) % 2 == 0 ? 2 : 4;
-                        return;
-                    }
-                }
-            }
+            Random rd = new Random();
+            recheckNull:
+            int i = rd.Next(0, 3), j = rd.Next(0, 3);
+            if (gameBoard[i, j] != 0)
+                goto recheckNull;
+            gameBoard[i, j] = 2;
         }
         private void Button1_Click(object sender, EventArgs e)
         {
@@ -245,6 +241,7 @@ namespace Game_of_2048_Main_Program
                 for (int j = 0; j < 4; j++)
                 {
                     gameBoard[i, j] = 0;
+                    buttons[i, j].Text = null;
                 }
             }
         }
