@@ -16,6 +16,7 @@ namespace Game_of_2048_Main_Program
         public static Button[,] buttons = new Button[4, 4];
 
         public static int[,] gameBoard = new int[4, 4];
+        public static int swapMade = 0;
         public Form1()
         {
             InitializeComponent();
@@ -26,11 +27,20 @@ namespace Game_of_2048_Main_Program
                 { button14,button15,button16,button17}
             };
 
-            for (int i = 0; i < 4; i++)
+            //for (int i = 0; i < 4; i++)
+            //{
+            //    Random rd = new Random();
+            //    Form1.gameBoard[rd.Next(0, 4), rd.Next(0, 4)] = i % 2 == 0 ? 2 : 4;
+            //}
+
+            gameBoard = new int[,]
             {
-                Random rd = new Random();
-                Form1.gameBoard[rd.Next(0, 4), rd.Next(0, 4)] = i % 2 == 0 ? 2 : 4;
-            }
+                {0,0,0,0 },
+                {0,4,2,1024 },
+                {0,0,0,0 },
+                {0,0,0,0 }
+            };
+
             PutResultsOnBoard();
         }
         private void Form1_Load(object sender, EventArgs e)
@@ -42,9 +52,9 @@ namespace Game_of_2048_Main_Program
                 { button14,button15,button16,button17}
             };
 
-            gameBoard[DateTime.Now.Minute % 3, DateTime.Now.Second % 3]= 2;
-            gameBoard[DateTime.Now.Second % 3, DateTime.Now.Minute % 3] = 4;
-            gameBoard[DateTime.Now.Second % 3, DateTime.Now.Second % 3] = 2;
+            //gameBoard[DateTime.Now.Minute % 3, DateTime.Now.Second % 3]= 2;
+            //gameBoard[DateTime.Now.Second % 3, DateTime.Now.Minute % 3] = 4;
+            //gameBoard[DateTime.Now.Second % 3, DateTime.Now.Second % 3] = 2;
 
             //for (int i = 0; i < 4; i++)
             //{
@@ -56,7 +66,7 @@ namespace Game_of_2048_Main_Program
 
 
         //Control functionality:
-        public static void Down(ref int[,] gameBoard)
+        public static void Down(ref int[,] gameBoard,ref int swapsMade)
         {
             for (int j = 0; j < 4; j++)
             {
@@ -64,15 +74,17 @@ namespace Game_of_2048_Main_Program
                 startRechecking:
                 for (int i = 0, helper = 0; i < 4; i++, helper++)
                 {
-                    if (i < 3 && gameBoard[i + 1, j] == 0)
+                    if (i < 3 && gameBoard[i + 1, j] == 0 && gameBoard[i,j]!=0)
                     {
                         gameBoard[i + 1, j] = gameBoard[i, j];
                         gameBoard[i, j] = 0;
+                        swapsMade++;
                     }
-                    if (i > 0 && gameBoard[i, j] == 0)
+                    if (i > 0 && gameBoard[i, j] == 0 && gameBoard[i-1, j] != 0)
                     {
                         gameBoard[i, j] = gameBoard[i - 1, j];
                         gameBoard[i - 1, j] = 0;
+                        swapsMade++;
                     }
                     i = helper == 3 || helper == 7 ? 0 : i; //recheck 2 times
                 }
@@ -82,17 +94,18 @@ namespace Game_of_2048_Main_Program
                 }
                 for (int i = 3; i > 0; i--)
                 {
-                    if (gameBoard[i, j] == gameBoard[i - 1, j])
+                    if (gameBoard[i, j] != 0 && gameBoard[i, j] == gameBoard[i - 1, j])
                     {
                         gameBoard[i, j] *= 2;
                         gameBoard[i - 1, j] = 0;
+                        swapsMade++;
                     }
                 }
                 enough = true;
                 goto startRechecking;
             }
         }
-        public static void Up(ref int[,] gameBoard)
+        public static void Up(ref int[,] gameBoard,ref int swapsMade)
         {
             for (int j = 0; j < 4; j++)
             {
@@ -100,15 +113,17 @@ namespace Game_of_2048_Main_Program
                 startRechecking:
                 for (int i = 3, helper = 0; i >= 0; i--, helper++)
                 {
-                    if (i > 0 && gameBoard[i - 1, j] == 0)
+                    if (i > 0 && gameBoard[i - 1, j] == 0 && gameBoard[i,j]!=0)
                     {
                         gameBoard[i - 1, j] = gameBoard[i, j];
                         gameBoard[i, j] = 0;
+                        swapsMade++;
                     }
-                    if (i < 3 && gameBoard[i, j] == 0)
+                    if (i < 3 && gameBoard[i, j] == 0 && gameBoard[i+1,j]!=0)
                     {
                         gameBoard[i, j] = gameBoard[i + 1, j];
                         gameBoard[i + 1, j] = 0;
+                        swapsMade++;
                     }
                     i = helper == 3 || helper == 7 ? 0 : i; //recheck 2 times
                 }
@@ -118,17 +133,18 @@ namespace Game_of_2048_Main_Program
                 }
                 for (int i = 0; i < 3; i++)
                 {
-                    if (gameBoard[i, j] == gameBoard[i + 1, j])
+                    if (gameBoard[i, j] != 0 && gameBoard[i, j] == gameBoard[i + 1, j])
                     {
                         gameBoard[i, j] *= 2;
                         gameBoard[i + 1, j] = 0;
+                        swapsMade++;
                     }
                 }
                 enough = true;
                 goto startRechecking;
             }
         }
-        public static void Right(ref int[,] gameBoard)
+        public static void Right(ref int[,] gameBoard,ref int swapsMade)
         {
             for (int i = 0; i < 4; i++)
             {
@@ -136,15 +152,17 @@ namespace Game_of_2048_Main_Program
                 startRechecking:
                 for (int j = 0, helper = 0; j < 4; j++, helper++)
                 {
-                    if (j < 3 && gameBoard[i, j + 1] == 0)
+                    if (j < 3 && gameBoard[i, j + 1] == 0 && gameBoard[i,j]!=0)
                     {
                         gameBoard[i, j + 1] = gameBoard[i, j];
                         gameBoard[i, j] = 0;
+                        swapsMade++;
                     }
-                    if (j > 0 && gameBoard[i, j] == 0)
+                    if (j > 0 && gameBoard[i, j] == 0 && gameBoard[i,j-1]!=0)
                     {
                         gameBoard[i, j] = gameBoard[i, j - 1];
                         gameBoard[i, j - 1] = 0;
+                        swapsMade++;
                     }
                     j = helper == 3 || helper == 7 ? 0 : j; //recheck 2 times
                 }
@@ -154,17 +172,18 @@ namespace Game_of_2048_Main_Program
                 }
                 for (int j = 3; j > 0; j--)
                 {
-                    if (gameBoard[i, j] == gameBoard[i, j - 1])
+                    if (gameBoard[i,j]!=0 && gameBoard[i, j] == gameBoard[i, j - 1])
                     {
                         gameBoard[i, j] *= 2;
                         gameBoard[i, j - 1] = 0;
+                        swapsMade++;
                     }
                 }
                 enough = true;
                 goto startRechecking;
             }
         }
-        public static void Left(ref int[,] gameBoard)
+        public static void Left(ref int[,] gameBoard,ref int swapsMade)
         {
             for (int i = 0; i < 4; i++)
             {
@@ -172,15 +191,17 @@ namespace Game_of_2048_Main_Program
                 startRechecking:
                 for (int j = 3, helper = 0; j >= 0; j--, helper++)
                 {
-                    if (j > 0 && gameBoard[i, j - 1] == 0)
+                    if (j > 0 && gameBoard[i, j - 1] == 0 && gameBoard[i,j]!=0)
                     {
                         gameBoard[i, j - 1] = gameBoard[i, j];
                         gameBoard[i, j] = 0;
+                        swapsMade++;
                     }
-                    if (j < 3 && gameBoard[i, j] == 0)
+                    if (j < 3 && gameBoard[i, j] == 0 && gameBoard[i,j+1]!=0)
                     {
                         gameBoard[i, j] = gameBoard[i, j + 1];
                         gameBoard[i, j + 1] = 0;
+                        swapsMade++;
                     }
                     j = helper == 3 || helper == 7 ? 0 : j; //recheck 2 times
                 }
@@ -190,10 +211,11 @@ namespace Game_of_2048_Main_Program
                 }
                 for (int j = 0; j < 3; j++)
                 {
-                    if (gameBoard[i, j] == gameBoard[i, j + 1])
+                    if (gameBoard[i,j]!=0 && gameBoard[i, j] == gameBoard[i, j + 1])
                     {
                         gameBoard[i, j] *= 2;
                         gameBoard[i, j + 1] = 0;
+                        swapsMade++;
                     }
                 }
                 enough = true;
@@ -219,13 +241,13 @@ namespace Game_of_2048_Main_Program
                         continue;
                     }
                     buttons[i, j].Text = gameBoard[i, j].ToString();
-                    if (gameBoard[i, j] >= 128)
-                    {
-                        buttons[i, j].Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-                    }
                     if (gameBoard[i, j] >= 1024)
                     {
-                        buttons[i, j].Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+                        buttons[i, j].Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);/*, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));*/
+                    }
+                    else if (gameBoard[i, j] >= 128)
+                    {
+                        buttons[i, j].Font = new System.Drawing.Font("Microsoft Sans Serif", 36F);/*("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));*/
                     }
                     if (gameBoard[i,j]>=32)
                         buttons[i, j].BackgroundImage = button22.BackgroundImage;
@@ -244,7 +266,7 @@ namespace Game_of_2048_Main_Program
             {
                 for (int j = 0; j < 4; j++)
                 {
-                    if (gameBoard[i,j]==0)
+                    if (gameBoard[i, j] == 0)
                     {
                         result = false;
                         goto endOfTheChecking;
@@ -255,9 +277,9 @@ namespace Game_of_2048_Main_Program
             {
                 for (int j = 1; j < 3; j++)
                 {
-                    if (gameBoard[i,j]== gameBoard[i-1, j] ||
-                        gameBoard[i, j] == gameBoard[i + 1, j] ||
-                        gameBoard[i, j] == gameBoard[i, j-1] ||
+                    if (gameBoard[i,j]==gameBoard[i+1,j] ||
+                        gameBoard[i, j] == gameBoard[i - 1, j] ||
+                        gameBoard[i, j] == gameBoard[i, j+1] ||
                         gameBoard[i, j] == gameBoard[i, j-1])
                     {
                         result = false;
@@ -287,6 +309,7 @@ namespace Game_of_2048_Main_Program
 
         private void RestartButton_Click(object sender, EventArgs e)
         {
+            RestartButton.BackColor = Color.Cornsilk;
             for (int i = 0; i < 4; i++)
             {
                 for (int j = 0; j < 4; j++)
@@ -304,47 +327,71 @@ namespace Game_of_2048_Main_Program
 
         private void DownClick(object sender, EventArgs e)
         {
-            if (isCrowded(gameBoard))
+            if (RestartButton.BackColor == Color.Salmon)
+                return;
+            Down(ref gameBoard,ref Form1.swapMade);
+            if (Form1.swapMade !=0)
+            {
+                AddVal(ref gameBoard);
+            }
+            PutResultsOnBoard();
+            if (isCrowded(gameBoard) && Form1.swapMade == 0)
             {
                 RestartButton.BackColor = Color.Salmon;
                 return;
             }
-            Down(ref gameBoard);
-            AddVal(ref gameBoard);
-            PutResultsOnBoard();
+            Form1.swapMade = 0;
         }
         private void UpClick(object sender, EventArgs e)
         {
-            if (isCrowded(gameBoard))
+            if (RestartButton.BackColor == Color.Salmon)
+                return;
+            Up(ref gameBoard, ref Form1.swapMade);
+            if (Form1.swapMade != 0)
+            {
+                AddVal(ref gameBoard);
+            }
+            PutResultsOnBoard();
+            if (isCrowded(gameBoard) && Form1.swapMade==0)
             {
                 RestartButton.BackColor = Color.Salmon;
                 return;
             }
-            Up(ref gameBoard);
-            AddVal(ref gameBoard);
-            PutResultsOnBoard();
+            Form1.swapMade = 0;
         }
         private void RightClick(object sender, EventArgs e)
         {
-            if (isCrowded(gameBoard))
+            if (RestartButton.BackColor == Color.Salmon)
+                return;
+            Right(ref gameBoard, ref Form1.swapMade);
+            if (Form1.swapMade != 0)
+            {
+                AddVal(ref gameBoard);
+            }
+            PutResultsOnBoard();
+            if (isCrowded(gameBoard) && Form1.swapMade == 0)
             {
                 RestartButton.BackColor = Color.Salmon;
                 return;
             }
-            Right(ref gameBoard);
-            AddVal(ref gameBoard);
-            PutResultsOnBoard();
+            Form1.swapMade = 0;
         }
         private void LeftClick(object sender, EventArgs e)
         {
-            if (isCrowded(gameBoard))
+            if (RestartButton.BackColor == Color.Salmon)
+                return;
+            Left(ref gameBoard,ref Form1.swapMade);
+            if (Form1.swapMade != 0)
+            {
+                AddVal(ref gameBoard);
+            }
+            PutResultsOnBoard();
+            if (isCrowded(gameBoard) && Form1.swapMade == 0)
             {
                 RestartButton.BackColor = Color.Salmon;
                 return;
             }
-            Left(ref gameBoard);
-            AddVal(ref gameBoard);
-            PutResultsOnBoard();
+            Form1.swapMade = 0;
         }
     }
 }
