@@ -110,5 +110,11 @@
   <ItemGroup>
     <None Include="Resources\BackColorItems2N4.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\MainBackgroundImage.png" />
+    <Content Include="Resources\MainBackgroundImage1.png" />
+    <None Include="Resources\MainBackgroundImage2.png" />
+    <None Include="Resources\MainGameboardBack.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

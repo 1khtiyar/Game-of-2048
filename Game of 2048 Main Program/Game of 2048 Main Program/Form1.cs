@@ -42,11 +42,15 @@ namespace Game_of_2048_Main_Program
                 { button14,button15,button16,button17}
             };
 
-            for (int i = 0; i < 4; i++)
-            {
-                Random rd = new Random();
-                Form1.gameBoard[rd.Next(0, 4), rd.Next(0, 4)] = i % 2 == 0 ? 2 : 4;
-            }
+            gameBoard[DateTime.Now.Minute % 3, DateTime.Now.Second % 3]= 2;
+            gameBoard[DateTime.Now.Second % 3, DateTime.Now.Minute % 3] = 4;
+            gameBoard[DateTime.Now.Second % 3, DateTime.Now.Second % 3] = 2;
+
+            //for (int i = 0; i < 4; i++)
+            //{
+            //    Random rd = new Random();
+            //    Form1.gameBoard[rd.Next(0, 4), rd.Next(0, 4)] = i % 2 == 0 ? 2 : 4;
+            //}
             PutResultsOnBoard();
         }
 
@@ -215,14 +219,54 @@ namespace Game_of_2048_Main_Program
                         continue;
                     }
                     buttons[i, j].Text = gameBoard[i, j].ToString();
+                    if (gameBoard[i, j] >= 128)
+                    {
+                        buttons[i, j].Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+                    }
+                    if (gameBoard[i, j] >= 1024)
+                    {
+                        buttons[i, j].Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+                    }
                     if (gameBoard[i,j]>=32)
                         buttons[i, j].BackgroundImage = button22.BackgroundImage;
                     else if (gameBoard[i,j]==16 || gameBoard[i, j] == 8)
-                        buttons[i, j].BackgroundImage = button23.BackgroundImage;
-                    else if (gameBoard[i, j] == 2 || gameBoard[i, j] == 4)
                         buttons[i, j].BackgroundImage = button24.BackgroundImage;
+                    else if (gameBoard[i, j] == 2 || gameBoard[i, j] == 4)
+                        buttons[i, j].BackgroundImage = button25.BackgroundImage;
                 }
             }
+        }
+
+        public bool isCrowded(int[,] gameBoard)
+        {
+            bool result = true;
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                {
+                    if (gameBoard[i,j]==0)
+                    {
+                        result = false;
+                        goto endOfTheChecking;
+                    }
+                }
+            }
+            for (int i = 1; i < 3; i++)
+            {
+                for (int j = 1; j < 3; j++)
+                {
+                    if (gameBoard[i,j]== gameBoard[i-1, j] ||
+                        gameBoard[i, j] == gameBoard[i + 1, j] ||
+                        gameBoard[i, j] == gameBoard[i, j-1] ||
+                        gameBoard[i, j] == gameBoard[i, j-1])
+                    {
+                        result = false;
+                        goto endOfTheChecking;
+                    }
+                }
+            }
+            endOfTheChecking:;
+            return result;
         }
 
         //Put additional value on gameboard
@@ -230,7 +274,7 @@ namespace Game_of_2048_Main_Program
         {
             Random rd = new Random();
             recheckNull:
-            int i = rd.Next(0, 3), j = rd.Next(0, 3);
+            int i = rd.Next(0, 4), j = rd.Next(0, 4);
             if (gameBoard[i, j] != 0)
                 goto recheckNull;
             gameBoard[i, j] = 2;
@@ -251,29 +295,53 @@ namespace Game_of_2048_Main_Program
                     buttons[i, j].Text = null;
                 }
             }
+            gameBoard[DateTime.Now.Minute % 3, DateTime.Now.Second % 3] = 2;
+            gameBoard[DateTime.Now.Second % 3, DateTime.Now.Minute % 3] = 4;
+            gameBoard[DateTime.Now.Second % 3, DateTime.Now.Second % 3] = 2;
+            PutResultsOnBoard();
         }
 
 
         private void DownClick(object sender, EventArgs e)
         {
+            if (isCrowded(gameBoard))
+            {
+                RestartButton.BackColor = Color.Salmon;
+                return;
+            }
             Down(ref gameBoard);
             AddVal(ref gameBoard);
             PutResultsOnBoard();
         }
         private void UpClick(object sender, EventArgs e)
         {
+            if (isCrowded(gameBoard))
+            {
+                RestartButton.BackColor = Color.Salmon;
+                return;
+            }
             Up(ref gameBoard);
             AddVal(ref gameBoard);
             PutResultsOnBoard();
         }
         private void RightClick(object sender, EventArgs e)
         {
+            if (isCrowded(gameBoard))
+            {
+                RestartButton.BackColor = Color.Salmon;
+                return;
+            }
             Right(ref gameBoard);
             AddVal(ref gameBoard);
             PutResultsOnBoard();
         }
         private void LeftClick(object sender, EventArgs e)
         {
+            if (isCrowded(gameBoard))
+            {
+                RestartButton.BackColor = Color.Salmon;
+                return;
+            }
             Left(ref gameBoard);
             AddVal(ref gameBoard);
             PutResultsOnBoard();
