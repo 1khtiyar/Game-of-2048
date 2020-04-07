@@ -73,6 +73,16 @@ namespace Game_of_2048_Main_Program.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BackColorItemsDeactivated {
+            get {
+                object obj = ResourceManager.GetObject("BackColorItemsDeactivated", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Quit_Icon {
             get {
                 object obj = ResourceManager.GetObject("Quit Icon", resourceCulture);

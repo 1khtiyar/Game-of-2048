@@ -211,9 +211,11 @@ namespace Game_of_2048_Main_Program
                     if (gameBoard[i, j]==0)
                     {
                         buttons[i, j].Text = null;
+                        buttons[i, j].BackgroundImage = button23.BackgroundImage;
                         continue;
                     }
                     buttons[i, j].Text = gameBoard[i, j].ToString();
+                    buttons[i, j].BackgroundImage = button22.BackgroundImage;
                 }
             }
         }
