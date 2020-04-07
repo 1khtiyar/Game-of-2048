@@ -104,5 +104,11 @@
   <ItemGroup>
     <None Include="Resources\BackColorItemsDeactivated.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BackColorItems8N16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BackColorItems2N4.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

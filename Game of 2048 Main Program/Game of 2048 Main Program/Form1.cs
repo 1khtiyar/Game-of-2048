@@ -215,7 +215,12 @@ namespace Game_of_2048_Main_Program
                         continue;
                     }
                     buttons[i, j].Text = gameBoard[i, j].ToString();
-                    buttons[i, j].BackgroundImage = button22.BackgroundImage;
+                    if (gameBoard[i,j]>=32)
+                        buttons[i, j].BackgroundImage = button22.BackgroundImage;
+                    else if (gameBoard[i,j]==16 || gameBoard[i, j] == 8)
+                        buttons[i, j].BackgroundImage = button23.BackgroundImage;
+                    else if (gameBoard[i, j] == 2 || gameBoard[i, j] == 4)
+                        buttons[i, j].BackgroundImage = button24.BackgroundImage;
                 }
             }
         }
