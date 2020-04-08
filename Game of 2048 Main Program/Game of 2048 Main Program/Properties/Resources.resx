@@ -133,6 +133,12 @@
   <data name="MainBackgroundImage1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MainBackgroundImage1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="MainBackgroundImage3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MainBackgroundImage2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BackColorItems256" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BackColorItems256.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Quit Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Quit Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -154,10 +160,13 @@
   <data name="Restart Icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Restart Icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BackColorItemsDeactivated" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BackColorItemsDeactivated.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="RestartIconAppropriate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RestartIconAppropriate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BackColorItemsDeactivated1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BackColorItemsDeactivated.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BackColorItemsDeactivated" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BackColorItemsDeactivated.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BackColorItems8N16" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -172,7 +181,10 @@
   <data name="BackColorItems2N4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BackColorItems2N4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MainBackgroundImage3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MainBackgroundImage2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Continue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Continue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BackColorItems1024" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BackColorItems1024.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

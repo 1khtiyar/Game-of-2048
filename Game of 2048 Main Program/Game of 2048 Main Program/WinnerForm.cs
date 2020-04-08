@@ -10,26 +10,14 @@ using System.Windows.Forms;
 
 namespace Game_of_2048_Main_Program
 {
-    public partial class WinnerForm : Form
+    public partial class Rules : Form
     {
-        public WinnerForm()
+        public Rules()
         {
             InitializeComponent();
         }
-
-        
-
         private void QuitButton_Click(object sender, EventArgs e)
         {
-            Form1 fm1 = new Form1();
-            fm1.Close();
-            this.Close();
-        }
-
-        private void RestartButton_Click(object sender, EventArgs e)
-        {
-            Form1 fm1 = new Form1();
-            fm1.RestartEvent();
             this.Close();
         }
     }

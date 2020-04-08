@@ -120,8 +120,12 @@
     <None Include="Resources\BackColorItems2N4.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Continue.png" />
+    <None Include="Resources\BackColorItems256.png" />
+    <None Include="Resources\BackColorItems1024.png" />
     <Content Include="Resources\MainBackgroundImage.png" />
     <Content Include="Resources\MainBackgroundImage1.png" />
+    <None Include="Resources\RestartIconAppropriate.png" />
     <None Include="Resources\MainBackgroundImage2.png" />
     <None Include="Resources\MainGameboardBack.png" />
   </ItemGroup>

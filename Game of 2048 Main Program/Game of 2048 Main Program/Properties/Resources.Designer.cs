@@ -83,6 +83,26 @@ namespace Game_of_2048_Main_Program.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BackColorItems1024 {
+            get {
+                object obj = ResourceManager.GetObject("BackColorItems1024", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BackColorItems256 {
+            get {
+                object obj = ResourceManager.GetObject("BackColorItems256", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BackColorItems2N4 {
             get {
                 object obj = ResourceManager.GetObject("BackColorItems2N4", resourceCulture);
@@ -136,6 +156,16 @@ namespace Game_of_2048_Main_Program.Properties {
         internal static System.Drawing.Bitmap BackColorItemsDeactivated1 {
             get {
                 object obj = ResourceManager.GetObject("BackColorItemsDeactivated1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Continue {
+            get {
+                object obj = ResourceManager.GetObject("Continue", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -246,6 +276,16 @@ namespace Game_of_2048_Main_Program.Properties {
         internal static System.Drawing.Bitmap RestartIcon {
             get {
                 object obj = ResourceManager.GetObject("RestartIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RestartIconAppropriate {
+            get {
+                object obj = ResourceManager.GetObject("RestartIconAppropriate", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

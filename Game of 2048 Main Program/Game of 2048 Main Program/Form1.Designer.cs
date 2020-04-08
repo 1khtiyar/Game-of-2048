@@ -22,12 +22,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button18 = new System.Windows.Forms.Button();
-            this.button19 = new System.Windows.Forms.Button();
-            this.button20 = new System.Windows.Forms.Button();
-            this.button21 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.DetailsButton = new System.Windows.Forms.Button();
+            this.buttonFor1024 = new System.Windows.Forms.Button();
+            this.buttonFor256 = new System.Windows.Forms.Button();
+            this.buttonFor64 = new System.Windows.Forms.Button();
+            this.QuitButton = new System.Windows.Forms.Button();
+            this.button23 = new System.Windows.Forms.Button();
+            this.buttonFor2 = new System.Windows.Forms.Button();
             this.RestartButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonFor8 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.button2 = new System.Windows.Forms.Button();
@@ -46,69 +50,126 @@
             this.button15 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
-            this.button22 = new System.Windows.Forms.Button();
-            this.button23 = new System.Windows.Forms.Button();
-            this.button25 = new System.Windows.Forms.Button();
-            this.button24 = new System.Windows.Forms.Button();
+            this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button18
+            // panel2
             // 
-            this.button18.BackColor = System.Drawing.Color.Cornsilk;
-            this.button18.FlatAppearance.BorderSize = 0;
-            this.button18.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button18.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button18.Location = new System.Drawing.Point(215, 558);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(134, 75);
-            this.button18.TabIndex = 2;
-            this.button18.Text = "↑";
-            this.button18.UseVisualStyleBackColor = false;
-            this.button18.Click += new System.EventHandler(this.UpClick);
+            this.panel2.Controls.Add(this.DetailsButton);
+            this.panel2.Controls.Add(this.buttonFor1024);
+            this.panel2.Controls.Add(this.buttonFor256);
+            this.panel2.Controls.Add(this.buttonFor64);
+            this.panel2.Controls.Add(this.QuitButton);
+            this.panel2.Controls.Add(this.button23);
+            this.panel2.Controls.Add(this.buttonFor2);
+            this.panel2.Controls.Add(this.RestartButton);
+            this.panel2.Controls.Add(this.buttonFor8);
+            this.panel2.Location = new System.Drawing.Point(13, 507);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(488, 140);
+            this.panel2.TabIndex = 1;
             // 
-            // button19
+            // DetailsButton
             // 
-            this.button19.BackColor = System.Drawing.Color.Cornsilk;
-            this.button19.FlatAppearance.BorderSize = 0;
-            this.button19.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button19.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button19.Location = new System.Drawing.Point(215, 639);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(134, 64);
-            this.button19.TabIndex = 3;
-            this.button19.Text = "↓";
-            this.button19.UseVisualStyleBackColor = false;
-            this.button19.Click += new System.EventHandler(this.DownClick);
+            this.DetailsButton.BackColor = System.Drawing.Color.Wheat;
+            this.DetailsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.DetailsButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DetailsButton.FlatAppearance.BorderSize = 3;
+            this.DetailsButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Coral;
+            this.DetailsButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.DetailsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DetailsButton.Font = new System.Drawing.Font("Mistral", 44F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DetailsButton.ForeColor = System.Drawing.Color.IndianRed;
+            this.DetailsButton.Location = new System.Drawing.Point(164, 0);
+            this.DetailsButton.Name = "DetailsButton";
+            this.DetailsButton.Size = new System.Drawing.Size(158, 140);
+            this.DetailsButton.TabIndex = 0;
+            this.DetailsButton.Text = "2048";
+            this.DetailsButton.UseVisualStyleBackColor = false;
+            this.DetailsButton.Click += new System.EventHandler(this.DetailsButton_Click);
             // 
-            // button20
+            // buttonFor1024
             // 
-            this.button20.BackColor = System.Drawing.Color.Cornsilk;
-            this.button20.FlatAppearance.BorderSize = 0;
-            this.button20.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button20.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button20.Location = new System.Drawing.Point(355, 558);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(58, 145);
-            this.button20.TabIndex = 4;
-            this.button20.Text = "→";
-            this.button20.UseVisualStyleBackColor = false;
-            this.button20.Click += new System.EventHandler(this.RightClick);
+            this.buttonFor1024.BackgroundImage = global::Game_of_2048_Main_Program.Properties.Resources.BackColorItems1024;
+            this.buttonFor1024.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonFor1024.FlatAppearance.BorderSize = 0;
+            this.buttonFor1024.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonFor1024.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonFor1024.Location = new System.Drawing.Point(214, 79);
+            this.buttonFor1024.Name = "buttonFor1024";
+            this.buttonFor1024.Size = new System.Drawing.Size(27, 40);
+            this.buttonFor1024.TabIndex = 0;
+            this.buttonFor1024.UseVisualStyleBackColor = true;
             // 
-            // button21
+            // buttonFor256
             // 
-            this.button21.BackColor = System.Drawing.Color.Cornsilk;
-            this.button21.FlatAppearance.BorderSize = 0;
-            this.button21.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button21.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button21.Location = new System.Drawing.Point(152, 558);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(57, 145);
-            this.button21.TabIndex = 5;
-            this.button21.Text = "←";
-            this.button21.UseVisualStyleBackColor = false;
-            this.button21.Click += new System.EventHandler(this.LeftClick);
+            this.buttonFor256.BackgroundImage = global::Game_of_2048_Main_Program.Properties.Resources.BackColorItems256;
+            this.buttonFor256.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonFor256.FlatAppearance.BorderSize = 0;
+            this.buttonFor256.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonFor256.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonFor256.Location = new System.Drawing.Point(258, 47);
+            this.buttonFor256.Name = "buttonFor256";
+            this.buttonFor256.Size = new System.Drawing.Size(27, 40);
+            this.buttonFor256.TabIndex = 0;
+            this.buttonFor256.UseVisualStyleBackColor = true;
+            // 
+            // buttonFor64
+            // 
+            this.buttonFor64.BackgroundImage = global::Game_of_2048_Main_Program.Properties.Resources.BackColorItems1;
+            this.buttonFor64.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonFor64.FlatAppearance.BorderSize = 0;
+            this.buttonFor64.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonFor64.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonFor64.Location = new System.Drawing.Point(234, 13);
+            this.buttonFor64.Name = "buttonFor64";
+            this.buttonFor64.Size = new System.Drawing.Size(27, 40);
+            this.buttonFor64.TabIndex = 0;
+            this.buttonFor64.UseVisualStyleBackColor = true;
+            // 
+            // QuitButton
+            // 
+            this.QuitButton.BackColor = System.Drawing.Color.Cornsilk;
+            this.QuitButton.BackgroundImage = global::Game_of_2048_Main_Program.Properties.Resources.Quit_Icon1;
+            this.QuitButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.QuitButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.QuitButton.FlatAppearance.BorderSize = 0;
+            this.QuitButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.QuitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.QuitButton.Location = new System.Drawing.Point(330, 0);
+            this.QuitButton.Name = "QuitButton";
+            this.QuitButton.Size = new System.Drawing.Size(158, 140);
+            this.QuitButton.TabIndex = 0;
+            this.QuitButton.UseVisualStyleBackColor = false;
+            this.QuitButton.Click += new System.EventHandler(this.QuitButton_Click);
+            // 
+            // button23
+            // 
+            this.button23.BackgroundImage = global::Game_of_2048_Main_Program.Properties.Resources.BackColorItemsDeactivated1;
+            this.button23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button23.FlatAppearance.BorderSize = 0;
+            this.button23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button23.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button23.Location = new System.Drawing.Point(174, 13);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(24, 24);
+            this.button23.TabIndex = 0;
+            this.button23.UseVisualStyleBackColor = true;
+            // 
+            // buttonFor2
+            // 
+            this.buttonFor2.BackgroundImage = global::Game_of_2048_Main_Program.Properties.Resources.BackColorItems2N41;
+            this.buttonFor2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonFor2.FlatAppearance.BorderSize = 0;
+            this.buttonFor2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonFor2.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonFor2.Location = new System.Drawing.Point(204, 47);
+            this.buttonFor2.Name = "buttonFor2";
+            this.buttonFor2.Size = new System.Drawing.Size(24, 26);
+            this.buttonFor2.TabIndex = 0;
+            this.buttonFor2.UseVisualStyleBackColor = true;
             // 
             // RestartButton
             // 
@@ -116,32 +177,31 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.RestartButton.BackColor = System.Drawing.Color.Cornsilk;
-            this.RestartButton.BackgroundImage = global::Game_of_2048_Main_Program.Properties.Resources.Restart_Icon1;
-            this.RestartButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.RestartButton.BackgroundImage = global::Game_of_2048_Main_Program.Properties.Resources.RestartIconAppropriate;
+            this.RestartButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.RestartButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.RestartButton.FlatAppearance.BorderSize = 0;
             this.RestartButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.RestartButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.RestartButton.Location = new System.Drawing.Point(13, 558);
+            this.RestartButton.Location = new System.Drawing.Point(0, 0);
             this.RestartButton.Name = "RestartButton";
-            this.RestartButton.Size = new System.Drawing.Size(133, 145);
+            this.RestartButton.Size = new System.Drawing.Size(158, 140);
             this.RestartButton.TabIndex = 0;
             this.RestartButton.UseVisualStyleBackColor = false;
             this.RestartButton.Click += new System.EventHandler(this.RestartButton_Click);
             // 
-            // button1
+            // buttonFor8
             // 
-            this.button1.BackColor = System.Drawing.Color.Cornsilk;
-            this.button1.BackgroundImage = global::Game_of_2048_Main_Program.Properties.Resources.Quit_Icon1;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(419, 558);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(133, 145);
-            this.button1.TabIndex = 0;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.QuitButton_Click);
+            this.buttonFor8.BackgroundImage = global::Game_of_2048_Main_Program.Properties.Resources.BackColorItems8N161;
+            this.buttonFor8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonFor8.FlatAppearance.BorderSize = 0;
+            this.buttonFor8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonFor8.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonFor8.Location = new System.Drawing.Point(204, 10);
+            this.buttonFor8.Name = "buttonFor8";
+            this.buttonFor8.Size = new System.Drawing.Size(24, 31);
+            this.buttonFor8.TabIndex = 0;
+            this.buttonFor8.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -149,13 +209,9 @@
             this.panel1.BackgroundImage = global::Game_of_2048_Main_Program.Properties.Resources.MainBackgroundImage3;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel1.Controls.Add(this.tableLayoutPanel1);
-            this.panel1.Controls.Add(this.button22);
-            this.panel1.Controls.Add(this.button23);
-            this.panel1.Controls.Add(this.button25);
-            this.panel1.Controls.Add(this.button24);
             this.panel1.Location = new System.Drawing.Point(13, 13);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(539, 539);
+            this.panel1.Size = new System.Drawing.Size(488, 488);
             this.panel1.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -189,7 +245,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(532, 532);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(480, 480);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // button2
@@ -197,10 +253,10 @@
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button2.Location = new System.Drawing.Point(3, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(127, 127);
+            this.button2.Size = new System.Drawing.Size(114, 114);
             this.button2.TabIndex = 0;
             this.button2.UseVisualStyleBackColor = true;
             // 
@@ -209,10 +265,10 @@
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.Location = new System.Drawing.Point(136, 3);
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button3.Location = new System.Drawing.Point(123, 3);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(127, 127);
+            this.button3.Size = new System.Drawing.Size(114, 114);
             this.button3.TabIndex = 0;
             this.button3.UseVisualStyleBackColor = true;
             // 
@@ -221,10 +277,10 @@
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button4.Location = new System.Drawing.Point(269, 3);
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button4.Location = new System.Drawing.Point(243, 3);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(127, 127);
+            this.button4.Size = new System.Drawing.Size(114, 114);
             this.button4.TabIndex = 0;
             this.button4.UseVisualStyleBackColor = true;
             // 
@@ -233,10 +289,10 @@
             this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button5.FlatAppearance.BorderSize = 0;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button5.Location = new System.Drawing.Point(402, 3);
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button5.Location = new System.Drawing.Point(363, 3);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(127, 127);
+            this.button5.Size = new System.Drawing.Size(114, 114);
             this.button5.TabIndex = 0;
             this.button5.UseVisualStyleBackColor = true;
             // 
@@ -245,10 +301,10 @@
             this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button6.FlatAppearance.BorderSize = 0;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button6.Location = new System.Drawing.Point(3, 136);
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button6.Location = new System.Drawing.Point(3, 123);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(127, 127);
+            this.button6.Size = new System.Drawing.Size(114, 114);
             this.button6.TabIndex = 0;
             this.button6.UseVisualStyleBackColor = true;
             // 
@@ -257,10 +313,10 @@
             this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button7.FlatAppearance.BorderSize = 0;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button7.Location = new System.Drawing.Point(136, 136);
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button7.Location = new System.Drawing.Point(123, 123);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(127, 127);
+            this.button7.Size = new System.Drawing.Size(114, 114);
             this.button7.TabIndex = 0;
             this.button7.UseVisualStyleBackColor = true;
             // 
@@ -269,10 +325,10 @@
             this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button8.FlatAppearance.BorderSize = 0;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button8.Location = new System.Drawing.Point(269, 136);
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button8.Location = new System.Drawing.Point(243, 123);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(127, 127);
+            this.button8.Size = new System.Drawing.Size(114, 114);
             this.button8.TabIndex = 0;
             this.button8.UseVisualStyleBackColor = true;
             // 
@@ -281,10 +337,10 @@
             this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button9.FlatAppearance.BorderSize = 0;
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button9.Location = new System.Drawing.Point(402, 136);
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button9.Location = new System.Drawing.Point(363, 123);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(127, 127);
+            this.button9.Size = new System.Drawing.Size(114, 114);
             this.button9.TabIndex = 0;
             this.button9.UseVisualStyleBackColor = true;
             // 
@@ -293,10 +349,10 @@
             this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button10.FlatAppearance.BorderSize = 0;
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button10.Location = new System.Drawing.Point(3, 269);
+            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button10.Location = new System.Drawing.Point(3, 243);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(127, 127);
+            this.button10.Size = new System.Drawing.Size(114, 114);
             this.button10.TabIndex = 0;
             this.button10.UseVisualStyleBackColor = true;
             // 
@@ -305,10 +361,10 @@
             this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button11.FlatAppearance.BorderSize = 0;
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button11.Location = new System.Drawing.Point(136, 269);
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button11.Location = new System.Drawing.Point(123, 243);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(127, 127);
+            this.button11.Size = new System.Drawing.Size(114, 114);
             this.button11.TabIndex = 0;
             this.button11.UseVisualStyleBackColor = true;
             // 
@@ -317,10 +373,10 @@
             this.button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button12.FlatAppearance.BorderSize = 0;
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button12.Location = new System.Drawing.Point(269, 269);
+            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button12.Location = new System.Drawing.Point(243, 243);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(127, 127);
+            this.button12.Size = new System.Drawing.Size(114, 114);
             this.button12.TabIndex = 0;
             this.button12.UseVisualStyleBackColor = true;
             // 
@@ -329,10 +385,10 @@
             this.button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button13.FlatAppearance.BorderSize = 0;
             this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button13.Location = new System.Drawing.Point(402, 269);
+            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button13.Location = new System.Drawing.Point(363, 243);
             this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(127, 127);
+            this.button13.Size = new System.Drawing.Size(114, 114);
             this.button13.TabIndex = 0;
             this.button13.UseVisualStyleBackColor = true;
             // 
@@ -341,10 +397,10 @@
             this.button14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button14.FlatAppearance.BorderSize = 0;
             this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button14.Location = new System.Drawing.Point(3, 402);
+            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button14.Location = new System.Drawing.Point(3, 363);
             this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(127, 127);
+            this.button14.Size = new System.Drawing.Size(114, 114);
             this.button14.TabIndex = 0;
             this.button14.UseVisualStyleBackColor = true;
             // 
@@ -353,10 +409,10 @@
             this.button15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button15.FlatAppearance.BorderSize = 0;
             this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button15.Location = new System.Drawing.Point(136, 402);
+            this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button15.Location = new System.Drawing.Point(123, 363);
             this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(127, 127);
+            this.button15.Size = new System.Drawing.Size(114, 114);
             this.button15.TabIndex = 0;
             this.button15.UseVisualStyleBackColor = true;
             // 
@@ -365,10 +421,10 @@
             this.button17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button17.FlatAppearance.BorderSize = 0;
             this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button17.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button17.Location = new System.Drawing.Point(402, 402);
+            this.button17.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button17.Location = new System.Drawing.Point(363, 363);
             this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(127, 127);
+            this.button17.Size = new System.Drawing.Size(114, 114);
             this.button17.TabIndex = 0;
             this.button17.UseVisualStyleBackColor = true;
             // 
@@ -377,83 +433,27 @@
             this.button16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button16.FlatAppearance.BorderSize = 0;
             this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button16.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button16.Location = new System.Drawing.Point(269, 402);
+            this.button16.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button16.Location = new System.Drawing.Point(243, 363);
             this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(127, 127);
+            this.button16.Size = new System.Drawing.Size(114, 114);
             this.button16.TabIndex = 0;
             this.button16.UseVisualStyleBackColor = true;
-            // 
-            // button22
-            // 
-            this.button22.BackgroundImage = global::Game_of_2048_Main_Program.Properties.Resources.BackColorItems1;
-            this.button22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button22.FlatAppearance.BorderSize = 0;
-            this.button22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button22.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button22.Location = new System.Drawing.Point(487, 151);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(35, 127);
-            this.button22.TabIndex = 0;
-            this.button22.UseVisualStyleBackColor = true;
-            // 
-            // button23
-            // 
-            this.button23.BackgroundImage = global::Game_of_2048_Main_Program.Properties.Resources.BackColorItemsDeactivated1;
-            this.button23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button23.FlatAppearance.BorderSize = 0;
-            this.button23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button23.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button23.Location = new System.Drawing.Point(498, 140);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(24, 127);
-            this.button23.TabIndex = 0;
-            this.button23.UseVisualStyleBackColor = true;
-            // 
-            // button25
-            // 
-            this.button25.BackgroundImage = global::Game_of_2048_Main_Program.Properties.Resources.BackColorItems2N41;
-            this.button25.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button25.FlatAppearance.BorderSize = 0;
-            this.button25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button25.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button25.Location = new System.Drawing.Point(498, 223);
-            this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(24, 127);
-            this.button25.TabIndex = 0;
-            this.button25.UseVisualStyleBackColor = true;
-            // 
-            // button24
-            // 
-            this.button24.BackgroundImage = global::Game_of_2048_Main_Program.Properties.Resources.BackColorItems8N161;
-            this.button24.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button24.FlatAppearance.BorderSize = 0;
-            this.button24.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button24.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button24.Location = new System.Drawing.Point(498, 151);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(24, 127);
-            this.button24.TabIndex = 0;
-            this.button24.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSalmon;
-            this.ClientSize = new System.Drawing.Size(564, 715);
-            this.Controls.Add(this.RestartButton);
-            this.Controls.Add(this.button21);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button20);
-            this.Controls.Add(this.button19);
-            this.Controls.Add(this.button18);
+            this.ClientSize = new System.Drawing.Size(511, 658);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.KeyPreview = true;
             this.Name = "Form1";
             this.Text = "Game of 2048";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -464,12 +464,8 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button RestartButton;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.Button button19;
-        private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.Button button21;
-        private System.Windows.Forms.Button button22;
+        private System.Windows.Forms.Button QuitButton;
+        private System.Windows.Forms.Button buttonFor64;
         private System.Windows.Forms.Button button23;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button button2;
@@ -488,8 +484,12 @@
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Button button24;
-        private System.Windows.Forms.Button button25;
+        private System.Windows.Forms.Button buttonFor8;
+        private System.Windows.Forms.Button buttonFor2;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button DetailsButton;
+        private System.Windows.Forms.Button buttonFor256;
+        private System.Windows.Forms.Button buttonFor1024;
     }
 }
 
