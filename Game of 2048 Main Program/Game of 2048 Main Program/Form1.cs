@@ -7,7 +7,7 @@ namespace Game_of_2048_Main_Program
     public partial class Form1 : Form
     {
         public static Button[,] buttons = new Button[4, 4];
-
+        public static bool rulesFormEnabled = false;
         public static int[,] gameBoard = new int[4, 4];
         public static int swapMade = 0;
         public Form1()
@@ -36,6 +36,22 @@ namespace Game_of_2048_Main_Program
             PutResultsOnBoard();
         }
 
+        //////////
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.NumPad4)
+                LeftClickEvent();
+            else if (e.KeyCode == Keys.NumPad6)
+                RightClickEvent();
+            else if (e.KeyCode == Keys.NumPad8)
+                UpClickEvent();
+            else if (e.KeyCode == Keys.NumPad2)
+                DownClickEvent();
+            else if (e.KeyCode == Keys.R)
+                RestartEvent();
+
+        }
+        //////////
 
         //Control functionality:
         public static void DownAction(ref int[,] gameBoard,ref int swapsMade)
@@ -281,22 +297,6 @@ namespace Game_of_2048_Main_Program
         }
 
 
-        //////////
-        private void Form1_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.NumPad4)
-                LeftClickEvent();
-            else if (e.KeyCode == Keys.NumPad6)
-                RightClickEvent();
-            else if (e.KeyCode == Keys.NumPad8)
-                UpClickEvent();
-            else if (e.KeyCode == Keys.NumPad2)
-                DownClickEvent();
-            else if (e.KeyCode == Keys.R)
-                RestartEvent();
-
-        }
-        //////////
 
         public void DownClickEvent()
         {
@@ -366,7 +366,7 @@ namespace Game_of_2048_Main_Program
 
         public void RestartEvent()
         {
-            this.RestartButton.BackColor = Color.Cornsilk;
+            this.RestartButton.BackColor = Color.LightGray;
             for (int i = 0; i < 4; i++)
             {
                 for (int j = 0; j < 4; j++)
@@ -395,8 +395,12 @@ namespace Game_of_2048_Main_Program
         }
         private void DetailsButton_Click(object sender, EventArgs e)
         {
-            //Rules rl = new Rules();
-            //rl.Show();
+            if (rulesFormEnabled)
+            {
+                return;
+            }
+            (new Rules()).Show();
+            rulesFormEnabled = true;
         }
     }
 }

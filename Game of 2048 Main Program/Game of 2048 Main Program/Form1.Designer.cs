@@ -57,6 +57,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel2.Controls.Add(this.DetailsButton);
             this.panel2.Controls.Add(this.buttonFor1024);
             this.panel2.Controls.Add(this.buttonFor256);
@@ -68,25 +69,25 @@
             this.panel2.Controls.Add(this.buttonFor8);
             this.panel2.Location = new System.Drawing.Point(13, 507);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(488, 140);
+            this.panel2.Size = new System.Drawing.Size(488, 120);
             this.panel2.TabIndex = 1;
             // 
             // DetailsButton
             // 
-            this.DetailsButton.BackColor = System.Drawing.Color.Wheat;
+            this.DetailsButton.BackColor = System.Drawing.Color.LightGray;
             this.DetailsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.DetailsButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DetailsButton.FlatAppearance.BorderSize = 3;
-            this.DetailsButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Coral;
-            this.DetailsButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.DetailsButton.FlatAppearance.BorderSize = 0;
+            this.DetailsButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightCoral;
+            this.DetailsButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
             this.DetailsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DetailsButton.Font = new System.Drawing.Font("Mistral", 44F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DetailsButton.ForeColor = System.Drawing.Color.IndianRed;
-            this.DetailsButton.Location = new System.Drawing.Point(164, 0);
+            this.DetailsButton.Font = new System.Drawing.Font("MS Reference Sans Serif", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DetailsButton.ForeColor = System.Drawing.Color.Black;
+            this.DetailsButton.Location = new System.Drawing.Point(132, 5);
             this.DetailsButton.Name = "DetailsButton";
-            this.DetailsButton.Size = new System.Drawing.Size(158, 140);
+            this.DetailsButton.Size = new System.Drawing.Size(224, 110);
             this.DetailsButton.TabIndex = 0;
-            this.DetailsButton.Text = "2048";
+            this.DetailsButton.Text = "RULES";
             this.DetailsButton.UseVisualStyleBackColor = false;
             this.DetailsButton.Click += new System.EventHandler(this.DetailsButton_Click);
             // 
@@ -131,16 +132,18 @@
             // 
             // QuitButton
             // 
-            this.QuitButton.BackColor = System.Drawing.Color.Cornsilk;
+            this.QuitButton.BackColor = System.Drawing.Color.LightGray;
             this.QuitButton.BackgroundImage = global::Game_of_2048_Main_Program.Properties.Resources.Quit_Icon1;
-            this.QuitButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.QuitButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.QuitButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.QuitButton.FlatAppearance.BorderSize = 0;
-            this.QuitButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.QuitButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightCoral;
+            this.QuitButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.QuitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.QuitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.QuitButton.Location = new System.Drawing.Point(330, 0);
+            this.QuitButton.Location = new System.Drawing.Point(373, 5);
             this.QuitButton.Name = "QuitButton";
-            this.QuitButton.Size = new System.Drawing.Size(158, 140);
+            this.QuitButton.Size = new System.Drawing.Size(110, 110);
             this.QuitButton.TabIndex = 0;
             this.QuitButton.UseVisualStyleBackColor = false;
             this.QuitButton.Click += new System.EventHandler(this.QuitButton_Click);
@@ -176,16 +179,18 @@
             this.RestartButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.RestartButton.BackColor = System.Drawing.Color.Cornsilk;
+            this.RestartButton.BackColor = System.Drawing.Color.LightGray;
             this.RestartButton.BackgroundImage = global::Game_of_2048_Main_Program.Properties.Resources.RestartIconAppropriate;
             this.RestartButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.RestartButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.RestartButton.FlatAppearance.BorderSize = 0;
-            this.RestartButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.RestartButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightCoral;
+            this.RestartButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.RestartButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RestartButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.RestartButton.Location = new System.Drawing.Point(0, 0);
+            this.RestartButton.Location = new System.Drawing.Point(5, 5);
             this.RestartButton.Name = "RestartButton";
-            this.RestartButton.Size = new System.Drawing.Size(158, 140);
+            this.RestartButton.Size = new System.Drawing.Size(110, 110);
             this.RestartButton.TabIndex = 0;
             this.RestartButton.UseVisualStyleBackColor = false;
             this.RestartButton.Click += new System.EventHandler(this.RestartButton_Click);
@@ -252,6 +257,8 @@
             // 
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button2.Location = new System.Drawing.Point(3, 3);
@@ -264,6 +271,8 @@
             // 
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button3.Location = new System.Drawing.Point(123, 3);
@@ -276,6 +285,8 @@
             // 
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button4.Location = new System.Drawing.Point(243, 3);
@@ -288,6 +299,8 @@
             // 
             this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button5.Location = new System.Drawing.Point(363, 3);
@@ -300,6 +313,8 @@
             // 
             this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button6.Location = new System.Drawing.Point(3, 123);
@@ -312,6 +327,8 @@
             // 
             this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button7.Location = new System.Drawing.Point(123, 123);
@@ -324,6 +341,8 @@
             // 
             this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button8.Location = new System.Drawing.Point(243, 123);
@@ -336,6 +355,8 @@
             // 
             this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button9.FlatAppearance.BorderSize = 0;
+            this.button9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button9.Location = new System.Drawing.Point(363, 123);
@@ -348,6 +369,8 @@
             // 
             this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button10.FlatAppearance.BorderSize = 0;
+            this.button10.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button10.Location = new System.Drawing.Point(3, 243);
@@ -360,6 +383,8 @@
             // 
             this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button11.FlatAppearance.BorderSize = 0;
+            this.button11.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button11.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button11.Location = new System.Drawing.Point(123, 243);
@@ -372,6 +397,8 @@
             // 
             this.button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button12.FlatAppearance.BorderSize = 0;
+            this.button12.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button12.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button12.Location = new System.Drawing.Point(243, 243);
@@ -384,6 +411,8 @@
             // 
             this.button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button13.FlatAppearance.BorderSize = 0;
+            this.button13.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button13.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button13.Location = new System.Drawing.Point(363, 243);
@@ -396,6 +425,8 @@
             // 
             this.button14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button14.FlatAppearance.BorderSize = 0;
+            this.button14.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button14.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button14.Location = new System.Drawing.Point(3, 363);
@@ -408,6 +439,8 @@
             // 
             this.button15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button15.FlatAppearance.BorderSize = 0;
+            this.button15.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button15.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button15.Location = new System.Drawing.Point(123, 363);
@@ -420,6 +453,8 @@
             // 
             this.button17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button17.FlatAppearance.BorderSize = 0;
+            this.button17.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button17.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button17.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button17.Location = new System.Drawing.Point(363, 363);
@@ -432,6 +467,8 @@
             // 
             this.button16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button16.FlatAppearance.BorderSize = 0;
+            this.button16.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button16.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button16.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button16.Location = new System.Drawing.Point(243, 363);
@@ -445,11 +482,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSalmon;
-            this.ClientSize = new System.Drawing.Size(511, 658);
+            this.ClientSize = new System.Drawing.Size(511, 639);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.KeyPreview = true;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "Game of 2048";
             this.Load += new System.EventHandler(this.Form1_Load);

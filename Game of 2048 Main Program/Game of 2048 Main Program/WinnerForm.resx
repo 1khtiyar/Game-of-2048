@@ -117,4 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="textBox2.Text" xml:space="preserve">
+    <value>The Game 2048
+
+
+- To play you should enable Num Pad
+- To move cells on the gameboard press 2, 4, 6 or 8 keys on Num Pad
+- You will be winner if there will be at least one cell with 2048 score on the gameboard
+
+
+© Ikhtiyar N 2020</value>
+  </data>
 </root>

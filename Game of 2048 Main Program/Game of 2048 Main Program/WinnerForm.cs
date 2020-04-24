@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Game_of_2048_Main_Program
@@ -15,9 +8,23 @@ namespace Game_of_2048_Main_Program
         public Rules()
         {
             InitializeComponent();
+            this.KeyDown += KeyDownProcess;
+        }
+        private void Rules_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void KeyDownProcess(object sender,KeyEventArgs e)
+        {
+            if (e.KeyCode==Keys.Escape)
+            {
+                Form1.rulesFormEnabled = false;
+                this.Close();
+            }
         }
         private void QuitButton_Click(object sender, EventArgs e)
         {
+            Form1.rulesFormEnabled = false;
             this.Close();
         }
     }
