@@ -6,15 +6,28 @@ namespace Game_of_2048_Main_Program
 {
     public partial class Form1 : Form
     {
+        public enum Direction
+        {
+            Up,
+            Down,
+            Left,
+            Right
+        }
+
         public static Button[,] buttons = new Button[4, 4];
         public static bool rulesFormEnabled = false;
         public static int[,] gameBoard = new int[4, 4];
         public static int swapMade = 0;
+
+
         public Form1()
         {
             InitializeComponent();
             this.KeyDown += Form1_KeyDown;
         }
+        
+        
+        
         private void Form1_Load(object sender, EventArgs e)
         {
             buttons = new Button[,]{
@@ -36,24 +49,35 @@ namespace Game_of_2048_Main_Program
             PutResultsOnBoard();
         }
 
-        //////////
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.NumPad4)
-                LeftClickEvent();
-            else if (e.KeyCode == Keys.NumPad6)
-                RightClickEvent();
-            else if (e.KeyCode == Keys.NumPad8)
-                UpClickEvent();
-            else if (e.KeyCode == Keys.NumPad2)
-                DownClickEvent();
-            else if (e.KeyCode == Keys.R)
-                RestartEvent();
-
+            switch (e.KeyCode)
+            {
+                case Keys.NumPad2:
+                    MoveClickEvent(Direction.Down);
+                    break;
+                case Keys.NumPad4:
+                    MoveClickEvent(Direction.Left);
+                    break;
+                case Keys.NumPad6:
+                    MoveClickEvent(Direction.Right);
+                    break;
+                case Keys.NumPad8:
+                    MoveClickEvent(Direction.Up);
+                    break;
+                case Keys.R:
+                    RestartEvent();
+                    break;
+                default:
+                    break;
+            }
         }
-        //////////
+
+
+
 
         //Control functionality:
+
         public static void DownAction(ref int[,] gameBoard,ref int swapsMade)
         {
             for (int j = 0; j < 4; j++)
@@ -212,10 +236,10 @@ namespace Game_of_2048_Main_Program
 
         }
 
-
         //Control handlers:
 
 
+        
         public void PutResultsOnBoard()
         {
             for (int i = 0; i < 4; i++)
@@ -281,6 +305,7 @@ namespace Game_of_2048_Main_Program
                 goto recheckNull;
             gameBoard[i, j] = 2;
         }
+
         private bool isThereWinner(int[,] gameboard)
         {
             for (int i = 0; i < 4; i++)
@@ -298,11 +323,16 @@ namespace Game_of_2048_Main_Program
 
 
 
-        public void DownClickEvent()
+        private void MoveClickEvent(Direction direction)
         {
             if (RestartButton.BackColor == Color.Salmon)
                 return;
-            DownAction(ref gameBoard, ref Form1.swapMade);
+
+            if (direction == Direction.Up) UpAction(ref gameBoard, ref Form1.swapMade);
+            else if (direction == Direction.Down) DownAction(ref gameBoard, ref Form1.swapMade);
+            else if (direction == Direction.Left) LeftAction(ref gameBoard, ref Form1.swapMade);
+            else if (direction == Direction.Right) RightAction(ref gameBoard, ref Form1.swapMade);
+
             if (Form1.swapMade != 0)
             {
                 AddVal(ref gameBoard);
@@ -314,54 +344,8 @@ namespace Game_of_2048_Main_Program
             PutResultsOnBoard();
             Form1.swapMade = 0;
         }
-        public void UpClickEvent()
-        {
-            if (RestartButton.BackColor == Color.Salmon)
-                return;
-            UpAction(ref gameBoard, ref Form1.swapMade);
-            if (Form1.swapMade != 0)
-            {
-                AddVal(ref gameBoard);
-            }
-            if (((isCrowded(gameBoard) && Form1.swapMade == 0) || isThereWinner(gameBoard)))
-            {
-                RestartButton.BackColor = Color.Salmon;
-            }
-            PutResultsOnBoard();
-            Form1.swapMade = 0;
-        }
-        public void RightClickEvent()
-        {
-            if (RestartButton.BackColor == Color.Salmon)
-                return;
-            RightAction(ref gameBoard, ref Form1.swapMade);
-            if (Form1.swapMade != 0)
-            {
-                AddVal(ref gameBoard);
-            }
-            if (((isCrowded(gameBoard) && Form1.swapMade == 0) || isThereWinner(gameBoard)))
-            {
-                RestartButton.BackColor = Color.Salmon;
-            }
-            PutResultsOnBoard();
-            Form1.swapMade = 0;
-        }
-        public void LeftClickEvent()
-        {
-            if (RestartButton.BackColor == Color.Salmon)
-                return;
-            LeftAction(ref gameBoard, ref Form1.swapMade);
-            if (Form1.swapMade != 0)
-            {
-                AddVal(ref gameBoard);
-            }
-            if (((isCrowded(gameBoard) && Form1.swapMade == 0) || isThereWinner(gameBoard)))
-            {
-                RestartButton.BackColor = Color.Salmon;
-            }
-            PutResultsOnBoard();
-            Form1.swapMade = 0;
-        }
+
+
 
 
         public void RestartEvent()
@@ -385,14 +369,17 @@ namespace Game_of_2048_Main_Program
             Form1.gameBoard[DateTime.Now.Second % 3+1, DateTime.Now.Second % 3] = 2;
             this.PutResultsOnBoard();
         }
+
         private void RestartButton_Click(object sender, EventArgs e)
         {
             RestartEvent();
         }
+
         private void QuitButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
         private void DetailsButton_Click(object sender, EventArgs e)
         {
             if (rulesFormEnabled)
